@@ -3,6 +3,8 @@ title: Balance Tree(FHQ Treap)
 author: ROY1994
 avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg
 authorLink: roy1994.top
+authorAbout: CODE_LIFE
+authorDesc: CODE_LIFE
 categories: 技术
 date: 2018-08-13 13:00:42
 comments: true
@@ -12,7 +14,7 @@ tags:
   - 平衡树
 keywords: FHQ
 description: 介绍FHQ平衡树
-photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/cover/11.webp
+photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.3/img/photo/1.webp
 ---
 
 

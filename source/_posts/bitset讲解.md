@@ -1,18 +1,18 @@
 ---
 title: bitset讲解
 author: ROY1994
-avatar: 'https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg'
+avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg
 authorLink: roy1994.top
 authorAbout: CODE_LIFE
 authorDesc: CODE_LIFE
 categories: 技术
-comments: true
 date: 2021-07-22 00:34:34
+comments: true
 tags:
 	- STL
 keywords: bitset
 description: RT
-photos: 
+photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.3/img/photo/3.webp
 ---
 
 > 为了写一道[毒瘤题](https://www.luogu.org/problemnew/show/P3674)，决定学一下 **bitset**

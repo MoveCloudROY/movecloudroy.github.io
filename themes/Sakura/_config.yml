@@ -6,7 +6,7 @@ favicon: /images/favicon.ico
 avatar: /img/custom/avatar.jpg
 url: https://roy1994.top
 description: “Hi,ROY1994!”
-cdn: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2
+cdn: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.3
 pjax: 1
 # 1开启
 mathjax: 1

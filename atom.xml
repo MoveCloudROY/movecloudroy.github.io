@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://roy1994.top/"/>
-  <updated>2021-07-19T11:06:35.859Z</updated>
+  <updated>2021-07-21T16:36:18.549Z</updated>
   <id>https://roy1994.top/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bitset讲解</title>
+    <link href="https://roy1994.top/2021/07/22/bitset%E8%AE%B2%E8%A7%A3/"/>
+    <id>https://roy1994.top/2021/07/22/bitset讲解/</id>
+    <published>2021-07-21T16:34:34.000Z</published>
+    <updated>2021-07-21T16:36:18.549Z</updated>
+    
+    <summary type="html">
+    
+      RT
+    
+    </summary>
+    
+      <category term="技术" scheme="https://roy1994.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="STL" scheme="https://roy1994.top/tags/STL/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo-Theme-Sakura</title>
@@ -43,7 +63,7 @@
     <link href="https://roy1994.top/2018/08/13/Balance-Tree-FHQ-Treap/"/>
     <id>https://roy1994.top/2018/08/13/Balance-Tree-FHQ-Treap/</id>
     <published>2018-08-13T05:00:42.000Z</published>
-    <updated>2021-07-21T16:22:50.490Z</updated>
+    <updated>2021-07-21T16:34:02.839Z</updated>
     
     <summary type="html">
     

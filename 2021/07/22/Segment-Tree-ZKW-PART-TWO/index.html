@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: STL | ROY1994&#39;s Blog</title>
+  <title itemprop="name">Segment-Tree-ZKW-PART-TWO | ROY1994&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -356,64 +356,236 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="STL.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/6.jpg);" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/6.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Segment-Tree-ZKW-PART-TWO</h1>
+      <p class="entry-census">
+        <span>
+          <a href="roy1994.top">
+            <img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="roy1994.top">ROY1994</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-7-22<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">STL</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/07/22/bitset讲解/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <blockquote>
+<p>本来想看看网上的讲解的，结果发现都讲得不清楚，还是自己写一个吧</p>
+</blockquote>
+<hr>
+<h1 id="普通线段树与ZKW线段树"><a href="#普通线段树与ZKW线段树" class="headerlink" title="普通线段树与ZKW线段树"></a>普通线段树与ZKW线段树</h1><blockquote>
+<ul>
+<li><strong>普通线段树</strong>通过递归建树，因而其常数相对较大</li>
+<li><strong>普通线段树</strong>代码长，相对较复杂</li>
+<li><strong>ZKW线段树</strong>通过循环建树，相对常数小</li>
+<li><strong>ZKW线段树</strong>代码短，易理解</li>
+</ul>
+</blockquote>
+<h1 id="ZKW线段树-·-无差分弱化版"><a href="#ZKW线段树-·-无差分弱化版" class="headerlink" title="ZKW线段树 · 无差分弱化版"></a>ZKW线段树 · 无差分弱化版</h1><p>线段树是一种堆式储存结构，<br>观察其节点编号</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13056869-91458b9150248d4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>将其转化成二进制</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13056869-822d1fc74b118836.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p>规律是很显然的</p>
+<blockquote>
+<ul>
+<li>一个节点的父节点是这个数左移1，这个位运算就是低位舍弃，所有数字左移一位</li>
+<li>一个节点的子节点是这个数右移1，是左节点，右移1 +1是右节点</li>
+<li>同一层的节点是依次递增的，第$n$层有$2^{n-1}$个节点</li>
+<li>最后一层有多少节点，值域就是多少(这个很重要)</li>
+</ul>
+</blockquote>
+<p>有了这些规律就可以开始着手建树了</p>
+<p>若树的层数为 $m$ ，则最后一层的节点数 $cnt$ 满足 $cnt = 2^{m-1}$</p>
+<p>若数的个数为 $x$ ，则数的个数x满足 $\frac {cnt}{2} &lt; x &lt;= cnt$<br>（大于$x$小于$cnt$的部分无视）</p>
+<p>底层节点序号从 $cnt$ 开始，一直到 $cnt+n-1$ 结束，第 $p$ 个数编号为 $cnt+p-1$</p>
+<p>所以我们需要先算出这个 $cnt$ 的最小值</p>
+<pre><code class="cpp">for(cnt=1;cnt&lt;x;cnt&lt;&lt;=1);//这里没有等号，以保证cnt最小
+</code></pre>
+<h2 id="建树"><a href="#建树" class="headerlink" title="建树"></a>建树</h2><pre><code class="cpp">int n,a[10005];
+struct node
+{
+    int num;
+}Tree[10005];
+inline void build(int n)
+{
+    for(cnt=1;cnt&lt;x;cnt&lt;&lt;=1);
+    for(int i=cnt;i&lt;cnt+n;i++) Tree[i].num=read();
+}
+
+</code></pre>
+<p>这仅仅是对叶子节点进行操作，之后，我们要依次更新父节点<br>由于是自下往上更新，所以，我们应当从 $cnt-1$ 开始，一直到 $1$ </p>
+<pre><code class="cpp">for(int i=cnt-1;i&gt;=1;i--)
+    Tree[i].num=Tree[i&lt;&lt;1].num+Tree[i&lt;&lt;1|1].num;
+</code></pre>
+<p>最后的建树代码</p>
+<pre><code class="cpp">inline void build(int n)
+{
+    for(cnt=1;cnt&lt;x;cnt&lt;&lt;=1);
+    for(int i=cnt;i&lt;cnt+n;i++) Tree[i].num=read();
+    for(int i=cnt-1;i&gt;=1;i--) Tree[i].num=Tree[i&lt;&lt;1].num+Tree[i&lt;&lt;1|1].num;
+}
+</code></pre>
+<h2 id="单点操作"><a href="#单点操作" class="headerlink" title="单点操作"></a>单点操作</h2><p>直接修改</p>
+<pre><code class="cpp">inline void change(int x,int k)
+{
+    Tree[cnt+x-1].num+=k;
+    while(x) Tree[x&gt;&gt;=1].num=Tree[x&lt;&lt;1].num+Tree[x&lt;&lt;1|1].num;//更新
+}
+</code></pre>
+<h2 id="单点查询"><a href="#单点查询" class="headerlink" title="单点查询"></a>单点查询</h2><p>直接修改</p>
+<pre><code class="cpp">inline int askpot(int pos)
+{
+    return Tree[cnt+pos-1];
+}
+</code></pre>
+<hr>
+<h1 id="ZKW线段树-·-差分版"><a href="#ZKW线段树-·-差分版" class="headerlink" title="ZKW线段树 · 差分版"></a>ZKW线段树 · 差分版</h1><h2 id="建树-1"><a href="#建树-1" class="headerlink" title="建树"></a>建树</h2><p>我们发现，上面的方法对于区间操作时间复杂度会很高，因此，我们可以使用差分思想来进行优化</p>
+<p>此时，线段树节点存的值是他和父节点的差值<br>我们再来写一下差分版的build</p>
+<pre><code class="cpp">void build(int n)
+{
+    for (cnt = 1; cnt &lt; x; cnt &lt;&lt;= 1);
+    for (int i = cnt; i &lt; cnt + n; i++) Tree[i].num = read();
+    for (int i = cnt - 1; i &gt;= 1; i--)
+    {
+        Tree[i].num = min(Tree[i &lt;&lt; 1].num, Tree[i &lt;&lt; 1 | 1]);
+        Tree[i &lt;&lt; 1].num -= Tree[i];
+        Tree[i &lt;&lt; 1 | 1].num -= Tree[i];
+    }
+}
+</code></pre>
+<h2 id="单点查询-1"><a href="#单点查询-1" class="headerlink" title="单点查询"></a>单点查询</h2><p>由于差分的性质<br>只需依次向上累加就可以求出改点的值</p>
+<pre><code class="cpp">inline int askpot(int pos)
+{
+    int sum=0,x=cnt+pos-1;
+    while(x) sum+=Tree[x].num,x&gt;&gt;=1;
+    return sum;
+}
+</code></pre>
+<h2 id="区间查询"><a href="#区间查询" class="headerlink" title="区间查询"></a>区间查询</h2><pre><code class="cpp"> inline int askRange(int l,int r)
+
+
+</code></pre>
+
         </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/3.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/07/22/bitset讲解/">
-    bitset讲解</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-7-22</div>
-    <p>
-    RT</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/07/22/bitset讲解/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/custom/donate/WeChanQR.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2021/07/22/最小生成树/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/7.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/7.webp">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                最小生成树</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2021/07/22/Segment-Tree-PART-ONE/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/5.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/5.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Segment-Tree-PART-ONE</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "yDDI8gn8p6uGJ161qxfIYNLB-gzGzoHsz",
+        appKey: "zjxa8DkTGn1OS5pxFXmKk1Ts",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="roy1994.top" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg" itemprop="image" alt="ROY1994" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="roy1994.top" itemprop="url" rel="author">ROY1994</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>CODE_LIFE</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

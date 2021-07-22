@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: STL | ROY1994&#39;s Blog</title>
+  <title itemprop="name">Segment-Tree-PART-ONE | ROY1994&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -356,64 +356,271 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="STL.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/5.jpg);" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/5.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Segment-Tree-PART-ONE</h1>
+      <p class="entry-census">
+        <span>
+          <a href="roy1994.top">
+            <img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="roy1994.top">ROY1994</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-7-22<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">STL</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/07/22/bitset讲解/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><blockquote>
+<p>线段树，类似区间树，它在各个节点保存一条线段（数组中的一段子数组），主要用于高效解决连续区间的动态查询问题，由于二叉结构的特性，它基本能保持每个操作的复杂度为$O(logn)$。</p>
+</blockquote>
+<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><p>下面我们从一个经典的例子来了解线段树</p>
+<pre><code class="cpp">    从数组arr[0...n-1]中查找某个数组某个区间内的最小值，
+    其中数组大小固定，但是数组中的元素的值可以随时更新。
+</code></pre>
+<p>我们可以用线段树来解决这个问题：预处理耗时$O(n)$，查询、更新操作$O(logn)$，需要额外的空间$O(n)$。根据这个问题我们构造如下的二叉树</p>
+<ul>
+<li>叶子节点是原始组数arr中的元素</li>
+<li>非叶子节点代表它的所有子孙叶子节点所在区间的最小值<br>例如对于数组[2, 5, 1, 4, 9, 3]可以构造如下的二叉树（背景为白色表示叶子节点，非叶子节点的值是其对应数组区间内的最小值，例如根节点表示数组区间arr[0…5]内的最小值是1）：<br><img src="https://images0.cnblogs.com/blog/517264/201312/01204058-426dce8b8a05491b91edeba9ec2e4112.jpg" alt></li>
+</ul>
+<p>由于线段树的父节点区间是平均分割到左右子树，因此线段树是完全二叉树，对于包含$n$个叶子节点的完全二叉树，它一定有$n-1$个非叶节点，总共$2n-1$个节点，因此存储线段是需要的空间复杂度是$O(n)$</p>
+<h1 id="创建线段树"><a href="#创建线段树" class="headerlink" title="创建线段树"></a>创建线段树</h1><h2 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h2><p>根据线段树的性质（完全二叉树），只需知道父节点，就可以计算出子节点的序号</p>
+<pre><code class="cpp">inline LL getLeftNum(LL p)
+{
+    return p&lt;&lt;1;
+}
+inline LL getRightNum(LL p)
+{
+    return p&lt;&lt;1|1;
+}
+</code></pre>
+<h2 id="树的存放和节点信息"><a href="#树的存放和节点信息" class="headerlink" title="树的存放和节点信息"></a>树的存放和节点信息</h2><p>首先，我们需要判断我们需要维护的对象，可以是一个<strong>值</strong>，也可以是<strong>颜色</strong>，<strong>状态</strong>等</p>
+<pre><code class="cpp">struct
+{
+    int val;//可以添加col,status，lztag
+}Tree[N];
+</code></pre>
+<h2 id="建树操作"><a href="#建树操作" class="headerlink" title="建树操作"></a>建树操作</h2><p>我们使用递归操作来建树</p>
+<blockquote>
+<ul>
+<li>当左端点和右段点相同时，意味着此时的$p$节点是叶子节点</li>
+<li>二分当前区间，递归建树</li>
+</ul>
+</blockquote>
+<p>注意，这里有两个尚未出现的东西，$pushup$函数和$lztag$标记</p>
+<p>$pushup$函数用于从子节点向上依次更新父节点的值<br>而$lztag$是用于区间修改的懒标记</p>
+<pre><code class="cpp">void buildTree(LL p,LL l,LL r)
+{
+    lztag[p]=0;
+    if(l==r) {Tree[p]=a[l];return ;}
+    LL mid=(l+r)&gt;&gt;1;
+    buildTree(getLeftNum(p),l,mid);
+    buildTree(getRightNum(p),mid+1,r);
+    pushup(p);
+}
+</code></pre>
+<h2 id="pushup-操作"><a href="#pushup-操作" class="headerlink" title="pushup 操作"></a>pushup 操作</h2><p>$pushup$起到更新的作用，对于不同的需求，有不同的$pushup$操作</p>
+<p>对于求和，可以这么写</p>
+<pre><code class="cpp">inline void pushup(LL p)
+{
+    Tree[p]=Tree[getLeftNum(p)]+Tree[getRightNum(p)]);
+}
+</code></pre>
+<p>而对于求 最大值/最小值 ，则可以这么写</p>
+<pre><code class="cpp">inline void put_up(LL p)
+{
+    Tree[p]=max(Tree[getLeftNum(p)],Tree[getRightNum(p)]);
+    //Tree[p]=min(Tree[getLeftNum(p)],Tree[getRightNum(p)]);
+}
+</code></pre>
+<h2 id="更新操作"><a href="#更新操作" class="headerlink" title="更新操作"></a>更新操作</h2><p>更新操作可以分为两种</p>
+<ul>
+<li>单点操作</li>
+<li>区间操作</li>
+</ul>
+<h3 id="单点操作（updataPot）"><a href="#单点操作（updataPot）" class="headerlink" title="单点操作（updataPot）"></a>单点操作（updataPot）</h3><p>明确变量名：</p>
+<ol>
+<li>（l ~ r） ——  可支配区间</li>
+<li>（nedChangeL ~ nedChangeR） ——  需操作区间</li>
+<li>mid —— 可支配区间中点</li>
+</ol>
+<p>注 :</p>
+<blockquote>
+<ul>
+<li>当$mid$不小于$nedChangeL$时 代表去 $l$ ~ $mid$ 更新是有意义的，所以，我们选择更新该区间</li>
+<li>$mid$和$nedChangeR$同理</li>
+</ul>
+</blockquote>
+<pre><code class="cpp">void updataPot(LL nedChangeL,LL nedChangeR,LL l,LL r,LL p,LL num)
+{
+    if(l==r) {Tree[p]=num;return ;}
+    LL mid=(l+r)&gt;&gt;1;
+    if(nedChangeL&lt;=mid) updata(nedChangeL,nedChangeR,l,mid,getLeftNum(p),num);
+    if(nedChangeR&gt;mid) updata(nedChangeL,nedChangeR,mid+1,r,getRightNum(p),num);
+    put_up(p);
+}
+</code></pre>
+<h3 id="区间操作（updataInterval）"><a href="#区间操作（updataInterval）" class="headerlink" title="区间操作（updataInterval）"></a>区间操作（updataInterval）</h3><p>#区间操作需要引入一个概念 </p>
+<blockquote>
+<p>$lazytag$ :<br>$lazytag$标注的是线段树中每个树的变化量，即 $\Delta$ </p>
+<p>$lazytag$ 操作时正如其名，只对目前状态打上标记，等到更新时，才向下传递<br>因此，引入另一个函数$pushdown$，用于更新其子节点的$lazytag$和本节点的数值</p>
+</blockquote>
+<p>接下来给出$pushdown$的代码</p>
+<pre><code class="cpp">inline void updataSum(LL p,LL l,LL r,LL num)
+{
+    lztag[p]=lztag[p]+num;
+    Tree[p]+=num*(r-l+1);
+}
+inline void put_down(LL p,LL l,LL r)
+{
+    LL mid=(l+r)&gt;&gt;1;
+    updataSum(getLeftNum(p),l,mid,lztag[p]);
+    updataSum(getRightNum(p),mid+1,r,lztag[p]);
+    lztag[p]=0;
+}
+</code></pre>
+<p>有了$pushdown$算法，我们可以完成$updata$操作</p>
+<pre><code class="cpp">void updataInterval(LL needChangeL,LL needChangeR,LL l,LL r,LL p,LL num)
+{
+    if(needChangeL&lt;=l&amp;&amp;r&lt;=needChangeR) {updataSum(p,l,r,num);return ;}
+    put_down(p,l,r);
+    LL mid=(l+r)&gt;&gt;1;
+    if(needChangeL&lt;=mid) updata(needChangeL,needChangeR,l,mid,getLeftNum(p),num);
+    if(needChangeR&gt;mid) updata(needChangeL,needChangeR,mid+1,r,getRightNum(p),num);
+    put_up(p);
+}
+</code></pre>
+<h2 id="区间求值（query）"><a href="#区间求值（query）" class="headerlink" title="区间求值（query）"></a>区间求值（query）</h2><p>区间求值时，我们进行了询问，而因为$lazytag$的原因，在求值之前，需先进行$pushdown$操作</p>
+<pre><code class="cpp">LL getSum(LL qx,LL qy,LL l,LL r,LL p)
+{
+    LL sum=0;
+    if(qx&lt;=l&amp;&amp;r&lt;=qy)return Tree[p];
+    LL mid=(l+r)&gt;&gt;1;
+    put_down(p,l,r);
+    if(qx&lt;=mid)sum+=getSum(qx,qy,l,mid,getLeftNum(p));
+    if(qy&gt;mid) sum+=getSum(qx,qy,mid+1,r,getRightNum(p));
+    return sum;
+}
+</code></pre>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
         </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/3.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/07/22/bitset讲解/">
-    bitset讲解</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-7-22</div>
-    <p>
-    RT</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/07/22/bitset讲解/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/custom/donate/WeChanQR.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2021/07/22/Segment-Tree-ZKW-PART-TWO/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/6.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/6.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                Segment-Tree-ZKW-PART-TWO</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2021/07/22/莫队/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/4.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/4.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                莫队</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "yDDI8gn8p6uGJ161qxfIYNLB-gzGzoHsz",
+        appKey: "zjxa8DkTGn1OS5pxFXmKk1Ts",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="roy1994.top" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg" itemprop="image" alt="ROY1994" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="roy1994.top" itemprop="url" rel="author">ROY1994</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>CODE_LIFE</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

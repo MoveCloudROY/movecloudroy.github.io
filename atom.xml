@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://roy1994.top/"/>
-  <updated>2021-07-21T17:03:43.398Z</updated>
+  <updated>2021-07-22T07:05:31.849Z</updated>
   <id>https://roy1994.top/</id>
   
   <author>
@@ -17,11 +17,95 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>最小生成树</title>
+    <link href="https://roy1994.top/2021/07/22/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+    <id>https://roy1994.top/2021/07/22/最小生成树/</id>
+    <published>2021-07-22T07:04:06.000Z</published>
+    <updated>2021-07-22T07:05:31.849Z</updated>
+    
+    <summary type="html">
+    
+      RT
+    
+    </summary>
+    
+      <category term="技术" scheme="https://roy1994.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="algorithm" scheme="https://roy1994.top/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Segment-Tree-ZKW-PART-TWO</title>
+    <link href="https://roy1994.top/2021/07/22/Segment-Tree-ZKW-PART-TWO/"/>
+    <id>https://roy1994.top/2021/07/22/Segment-Tree-ZKW-PART-TWO/</id>
+    <published>2021-07-22T07:02:24.000Z</published>
+    <updated>2021-07-22T07:03:37.690Z</updated>
+    
+    <summary type="html">
+    
+      RT
+    
+    </summary>
+    
+      <category term="技术" scheme="https://roy1994.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="algorithm" scheme="https://roy1994.top/tags/algorithm/"/>
+    
+      <category term="线段树" scheme="https://roy1994.top/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Segment-Tree-PART-ONE</title>
+    <link href="https://roy1994.top/2021/07/22/Segment-Tree-PART-ONE/"/>
+    <id>https://roy1994.top/2021/07/22/Segment-Tree-PART-ONE/</id>
+    <published>2021-07-22T06:58:23.000Z</published>
+    <updated>2021-07-22T07:02:03.251Z</updated>
+    
+    <summary type="html">
+    
+      RT
+    
+    </summary>
+    
+      <category term="技术" scheme="https://roy1994.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="algorithm" scheme="https://roy1994.top/tags/algorithm/"/>
+    
+      <category term="线段树" scheme="https://roy1994.top/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>莫队</title>
+    <link href="https://roy1994.top/2021/07/22/%E8%8E%AB%E9%98%9F/"/>
+    <id>https://roy1994.top/2021/07/22/莫队/</id>
+    <published>2021-07-22T06:15:28.000Z</published>
+    <updated>2021-07-22T07:01:22.467Z</updated>
+    
+    <summary type="html">
+    
+      RT
+    
+    </summary>
+    
+      <category term="技术" scheme="https://roy1994.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="algorithm" scheme="https://roy1994.top/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>bitset讲解</title>
     <link href="https://roy1994.top/2021/07/22/bitset%E8%AE%B2%E8%A7%A3/"/>
     <id>https://roy1994.top/2021/07/22/bitset讲解/</id>
     <published>2021-07-21T16:34:34.000Z</published>
-    <updated>2021-07-21T17:03:43.398Z</updated>
+    <updated>2021-07-22T07:04:54.134Z</updated>
     
     <summary type="html">
     
@@ -63,7 +147,7 @@
     <link href="https://roy1994.top/2018/08/13/Balance-Tree-FHQ-Treap/"/>
     <id>https://roy1994.top/2018/08/13/Balance-Tree-FHQ-Treap/</id>
     <published>2018-08-13T05:00:42.000Z</published>
-    <updated>2021-07-21T16:58:43.545Z</updated>
+    <updated>2021-07-22T06:59:45.856Z</updated>
     
     <summary type="html">
     
@@ -74,9 +158,7 @@
       <category term="技术" scheme="https://roy1994.top/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="数据结构" scheme="https://roy1994.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="模版" scheme="https://roy1994.top/tags/%E6%A8%A1%E7%89%88/"/>
+      <category term="algorithm" scheme="https://roy1994.top/tags/algorithm/"/>
     
       <category term="平衡树" scheme="https://roy1994.top/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/"/>
     

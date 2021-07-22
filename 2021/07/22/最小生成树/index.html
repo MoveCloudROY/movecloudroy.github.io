@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">Tag: STL | ROY1994&#39;s Blog</title>
+  <title itemprop="name">最小生成树 | ROY1994&#39;s Blog</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -356,64 +356,211 @@
   </div>
 </header>
 
-      
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
-<div class="pattern-center ">
-  <div class="pattern-attachment-img">
-    <img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="STL.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/7.webp);" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/7.webp">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      最小生成树</h1>
+      <p class="entry-census">
+        <span>
+          <a href="roy1994.top">
+            <img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="roy1994.top">ROY1994</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-7-22<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
   </div>
-  <header class="pattern-header ">
-    <h1 class="cat-title">STL</h1>
-  </header>
-</div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      
-  <!-- 首页默认取最最新文章集 -->
-  
-    <article class="post post-list" itemscope="" itemtype="https://schema.org/BlogPosting">
-  <div class="post-entry">
-    <div class="feature">
-      <a href="/2021/07/22/bitset讲解/">
-        <div class="overlay">
-          <i class="iconfont icon-text">
-          </i>
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <blockquote>
+<p> 最小生成树有两种算法</p>
+<p>Prim &amp; Kruskal</p>
+</blockquote>
+<h3 id="1-Prim"><a href="#1-Prim" class="headerlink" title="1. Prim"></a>1. Prim</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+#define inf 0x7fffffff
+#define maxn 5005
+int cost[maxn][maxn],minn,n,m,v2[maxn],tot=1,now,ans;
+bool v1[maxn];
+inline void getcost()
+{
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    for(int i=1; i&lt;=n; i++) {
+        for(int j=1; j&lt;=n; j++) {
+            cost[i][j]=inf;
+        }
+    }
+    for(int i=1,u,v,w; i&lt;=m; i++) {
+           scanf(&quot;%d%d%d&quot;,&amp;u,&amp;v,&amp;w);
+                if(cost[u][v]&gt;w) {
+                    cost[u][v]=cost[v][u]=w;
+                }
+    }//初始化cost数组
+    for(int i=1; i&lt;=n; i++) {
+        v2[i]=cost[1][i];
+    }
+    v1[1]=1;//找出与1节点相连的边并进行标记
+}
+inline int prim()
+{
+    while(tot&lt;n) { //最小生成树的概念
+        minn=inf;
+        tot++;
+        for(int i=1; i&lt;=n; i++) {
+            if(!v1[i]&amp;&amp;v2[i]&lt;minn) {
+                minn=v2[i];
+                now=i;
+            }
+        }//找出最小边
+
+        ans+=minn;//更新答案
+        for(int i=1; i&lt;=n; i++) {
+            if(v2[i]&gt;cost[now][i]&amp;&amp;!v1[i]) {
+                v2[i]=cost[now][i];
+            }
+        }
+        v1[now]=1;//在找出与now节点相连的边并进行标记
+    }
+    return ans;
+}
+int main()
+{
+    getcost();
+    printf(&quot;%d&quot;,prim());
+    return 0;//主函数不解释
+}
+</code></pre>
+<h3 id="2-Kruskal"><a href="#2-Kruskal" class="headerlink" title="2. Kruskal"></a>2. Kruskal</h3><pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
+#define max(a,b) return a&gt;b?a:b 
+using namespace std;
+struct Edge{int pointA,pointB,w;}edge[200005];
+int father[5005],n,m,ans,eu,ev,cnt;
+inline bool cmp(Edge a,Edge b){return a.w&lt;b.w;}//快排的依据
+inline int findfather(int x){
+    while(x!=father[x]) x=father[x]=father[father[x]];
+    return x;
+}//并查集模板，用while循环比递归版快
+inline void kruskal(){
+    sort(edge+1,edge+m+1,cmp);//将边的权值排序
+    for(int i=1;i&lt;=m;i++){
+        eu=findfather(edge[i].pointA), ev=findfather(edge[i].pointB);
+        if(eu==ev) continue;//若出现环，则continue
+        ans+=edge[i].w;//更新答案
+        father[ev]=eu; cnt++;
+        if(cnt==n-1) break;//循环结束条件
+    }
+}
+int main(){
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
+    for(int i=1;i&lt;=n;i++) father[i]=i;//初始化并查集
+    for(int i=1;i&lt;=m;i++)
+        scanf(&quot;%d%d%d&quot;,&amp;edge[i].pointA,&amp;edge[i].pointB,&amp;edge[i].w);
+    kruskal();
+    printf(&quot;%d&quot;,ans);
+    return 0;
+}
+</code></pre>
+
         </div>
-        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/3.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
-      </a>
-    </div>
-    <h1 class="entry-title">
-    <a href="/2021/07/22/bitset讲解/">
-    bitset讲解</a>
-    </h1>
-    <div class="p-time">
-      <i class="iconfont icon-time">
-      </i>
-    2021-7-22</div>
-    <p>
-    RT</p>
-    <footer class="entry-footer">
-      <div class="post-more">
-        <a href="/2021/07/22/bitset讲解/">
-          <i class="iconfont icon-caidan">
-          </i>
-        </a>
-      </div>
-    </footer>
-  </div>
-  <hr>
-</article>
-  
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/custom/donate/WeChanQR.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/2021/07/22/Segment-Tree-ZKW-PART-TWO/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/6.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/6.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Segment-Tree-ZKW-PART-TWO</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "yDDI8gn8p6uGJ161qxfIYNLB-gzGzoHsz",
+        appKey: "zjxa8DkTGn1OS5pxFXmKk1Ts",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
 
-
-      <div class="clearer">
-      </div>
-    </main>
-    <!--  -->
-    
-  </div>
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="roy1994.top" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg" itemprop="image" alt="ROY1994" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="roy1994.top" itemprop="url" rel="author">ROY1994</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>CODE_LIFE</p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

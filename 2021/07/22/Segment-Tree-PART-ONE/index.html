@@ -352,7 +352,7 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/5.webp);" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/5.webp">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/head/5.webp);" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/head/5.webp">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
@@ -392,7 +392,7 @@
 <p>我们可以用线段树来解决这个问题：预处理耗时$O(n)$，查询、更新操作$O(logn)$，需要额外的空间$O(n)$。根据这个问题我们构造如下的二叉树</p>
 <ul>
 <li>叶子节点是原始组数arr中的元素</li>
-<li>非叶子节点代表它的所有子孙叶子节点所在区间的最小值<br>例如对于数组[2, 5, 1, 4, 9, 3]可以构造如下的二叉树（背景为白色表示叶子节点，非叶子节点的值是其对应数组区间内的最小值，例如根节点表示数组区间arr[0…5]内的最小值是1）：<br><img src="https://images0.cnblogs.com/blog/517264/201312/01204058-426dce8b8a05491b91edeba9ec2e4112.jpg" alt></li>
+<li>非叶子节点代表它的所有子孙叶子节点所在区间的最小值<br>例如对于数组[2, 5, 1, 4, 9, 3]可以构造如下的二叉树（背景为白色表示叶子节点，非叶子节点的值是其对应数组区间内的最小值，例如根节点表示数组区间arr[0…5]内的最小值是1）：<br><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/illus/SegT-1.jpg" alt></li>
 </ul>
 <p>由于线段树的父节点区间是平均分割到左右子树，因此线段树是完全二叉树，对于包含$n$个叶子节点的完全二叉树，它一定有$n-1$个非叶节点，总共$2n-1$个节点，因此存储线段是需要的空间复杂度是$O(n)$</p>
 <h1 id="创建线段树"><a href="#创建线段树" class="headerlink" title="创建线段树"></a>创建线段树</h1><h2 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h2><p>根据线段树的性质（完全二叉树），只需知道父节点，就可以计算出子节点的序号</p>
@@ -546,7 +546,7 @@ inline void put_down(LL p,LL l,LL r)
           
             <a href="/2021/07/22/Segment-Tree-ZKW-PART-TWO/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/6.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/6.webp">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/head/6.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/head/6.webp">
               </div>
               <span class="label">
               Previous Post</span>
@@ -564,7 +564,7 @@ inline void put_down(LL p,LL l,LL r)
           
             <a href="/2021/07/22/莫队/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/4.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.4/img/photo/4.webp">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/head/4.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/head/4.webp">
               </div>
               <span class="label">
               Next Post</span>

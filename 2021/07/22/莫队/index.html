@@ -405,7 +405,7 @@
 <p>显然，这样的时间复杂度太高，肯定会爆掉，所以我们需要莫队算法</p>
 <hr>
 <p>首先，我们定义两个指针$curl$，$curr$，每次询问我们通过移动这两个指针来框定区间，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/illus/modui-1.png" alt></p>
+<a href="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/illus/modui-1.png" data-fancybox="images" data-caption="区间" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.5/img/articlepic/illus/modui-1.png"></a>
 <p>假设一开始 $curl$ 指向 $4$ ，$curr$ 指向 $6$，</p>
 <p>下一个询问要求区间 $3$ ~ $5$，那么我们 $curl–$ ，顺带插入 $3$ ，$curr–$，顺带删去 $6$，</p>
 <p><strong>注意当前的先后顺序</strong><br>$curl–$ 要求先减后加入，而 $curr–$ 要求先删去再减</p>

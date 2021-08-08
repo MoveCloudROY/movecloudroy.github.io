@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://roy1994.top/"/>
-  <updated>2021-07-24T15:14:56.310Z</updated>
+  <updated>2021-08-08T06:49:20.861Z</updated>
   <id>https://roy1994.top/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>可爱的拟人</title>
+    <link href="https://roy1994.top/2021/08/08/%E5%8F%AF%E7%88%B1%E7%9A%84%E6%8B%9F%E4%BA%BA/"/>
+    <id>https://roy1994.top/2021/08/08/可爱的拟人/</id>
+    <published>2021-08-08T06:39:34.000Z</published>
+    <updated>2021-08-08T06:49:20.861Z</updated>
+    
+    <summary type="html">
+    
+      编程语言拟人
+    
+    </summary>
+    
+      <category term="随想" scheme="https://roy1994.top/categories/%E9%9A%8F%E6%83%B3/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>位运算</title>

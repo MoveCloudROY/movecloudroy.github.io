@@ -29,4 +29,9 @@ links:
       img: https://cloud.moezx.cc/Picture/svg/landscape/fields.svg
       name: Google
       desc: Google 镜像
+    - url: https://lyxw.xyz/
+      img: https://cdn.jsdelivr.net/gh/shiokiri/cdn/img/avatar2.png
+      name: SHIOKIRI
+      desc: 观海听涛技术部
 ---
+

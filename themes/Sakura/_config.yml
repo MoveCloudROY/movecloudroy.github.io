@@ -1,18 +1,18 @@
 # site name
-prefixName: Ayasa!! 
-siteName: ROY1994
+prefixName: 循迹者 
+siteName: 的日常
 # favicon and site master avatar
 favicon: /images/favicon.ico
 avatar: /img/custom/avatar.jpg
 url: https://roy1994.top
 description: “Hi,ROY1994!”
-cdn: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.3
+cdn: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6.1
 pjax: 1
 # 1开启
 mathjax: 1
 
-notice: 
-lazyloadImg: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/loader/orange.progress-bar-stripe-loader.svg
+notice: Do Everything!!
+lazyloadImg: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6.1/img/loader/orange.progress-bar-stripe-loader.svg
 
 menus:
   首页: { path: /, fa: fa-fort-awesome faa-shake }
@@ -37,7 +37,7 @@ menus:
     主题: {path: /theme-sakura/, fa: iconfont icon-sakura },
     Lab: {path: /lab/, fa: fa-cogs },
   } }
-  客户端: { path: /client/, fa: fa-android faa-vertical }
+  # 客户端: { path: /client/, fa: fa-android faa-vertical }
   RSS: { path: /atom.xml, fa: fa-rss faa-pulse }
 
 
@@ -68,7 +68,7 @@ bgclass: filter-dot
 startdash: 
   - {url: /theme-sakura/, title: Sakura, desc: 本站 hexo 主题, img: /img/startdash/sakura.md.png}
   - {url: https://space.bilibili.com/82669873, title: Bilibili, desc: b站, img: /img/startdash/bilibili.jpg}
-  # - {url: /, title: hojun的万事屋, desc: 技术服务, img: /img/startdash/wangshiwu.jpg}
+  # - {url: /, title: hojun的万事屋, desc: 笔记, img: /img/startdash/wangshiwu.jpg}
 
 
 

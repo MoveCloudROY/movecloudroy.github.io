@@ -9,12 +9,11 @@ categories: 技术
 date: 2018-08-13 13:00:42
 comments: true
 tags:
-  - 数据结构
-  - 模版
+  - algorithm
   - 平衡树
 keywords: FHQ
 description: 介绍FHQ平衡树
-photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.3/img/photo/1.webp
+photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6/img/articlepic/head/1.webp
 ---
 
 

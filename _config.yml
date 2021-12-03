@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: ROY1994's Blog
+title: 循迹者的日常
 subtitle:
-description: 卷卷人
+description: 
 keywords:
 author: ROY1994
 language: zh-cn
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://roy1994.top
+url: http://roy1994.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -84,6 +84,7 @@ deploy:
     # github: https://github.com/MoveCloudROY/movecloudroy.github.io.git
     # coding: https://e.coding.net/ROY1994/blog/blog.git
     gitee: https://gitee.com/movecloud/blog.git
+    cloud: git@roy1994.top:/var/repo/hexo.git
   branch: master
 
 # backup

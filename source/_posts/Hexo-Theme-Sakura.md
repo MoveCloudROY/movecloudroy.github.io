@@ -13,7 +13,7 @@ tags:
  - 悦读
 keywords: Sakura
 description: hexo-sakura主题使用教程
-photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.3/img/photo/2.webp
+photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6/img/articlepic/head/2.webp
 ---
 hexo-theme-sakura主题 [English document](https://github.com/honjun/hexo-theme-sakura/blob/master/README.md)
 

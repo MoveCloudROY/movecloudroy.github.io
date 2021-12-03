@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://roy1994.top/"/>
-  <updated>2021-09-24T10:34:35.665Z</updated>
+  <updated>2021-08-08T07:07:16.103Z</updated>
   <id>http://roy1994.top/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://roy1994.top/2021/09/24/git/"/>
-    <id>http://roy1994.top/2021/09/24/git/</id>
-    <published>2021-09-24T13:15:09.628Z</published>
-    <updated>2021-09-24T10:34:35.665Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;使用基本设置&quot;&gt;&lt;a href=&quot;#使用基本设置&quot; class=&quot;headerlink&quot; title=&quot;使用基本设置&quot;&gt;&lt;/a&gt;使用基本设置&lt;/h2&gt;&lt;h4 id=&quot;ssh-配置&quot;&gt;&lt;a href=&quot;#ssh-配置&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>可爱的拟人</title>
@@ -221,6 +199,26 @@
       <category term="algorithm" scheme="http://roy1994.top/tags/algorithm/"/>
     
       <category term="平衡树" scheme="http://roy1994.top/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git</title>
+    <link href="http://roy1994.top/2018/08/13/git/"/>
+    <id>http://roy1994.top/2018/08/13/git/</id>
+    <published>2018-08-13T05:00:42.000Z</published>
+    <updated>2021-12-03T05:14:20.642Z</updated>
+    
+    <summary type="html">
+    
+      git的基础用法
+    
+    </summary>
+    
+      <category term="技术" scheme="http://roy1994.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="git" scheme="http://roy1994.top/tags/git/"/>
     
   </entry>
   

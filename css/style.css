@@ -2113,13 +2113,13 @@ i.iconfont.hotpost {
     color:#ff6d6d
 }
 .entry-content h4:after {
-    content:"▌";
+    content:"â–Œ";
     left:0;
     position:absolute;
     color:#ff6d6d
 }
 .entry-content h5:after {
-    content:"♯";
+    content:"â™¯";
     left:0;
     position:absolute;
     color:#ff6d6d
@@ -5492,10 +5492,10 @@ i.iconfont.js-toggle-search.iconsearch {
     color:#555
 }
 .alipay-code:after {
-    content:"支付宝"
+    content:"æ”¯ä»˜å®"
 }
 .wechat-code:after {
-    content:"微信"
+    content:"å¾®ä¿¡"
 }
 .sm {
     cursor:wait
@@ -5797,7 +5797,7 @@ button.botui-actions-buttons-button {
     color:#464646;
     height:auto;
     line-height:25px;
-    margin-right:0;
+    margin-right:3px;
     padding-bottom:0;
     padding-top:1px;
     text-size-adjust:100%;
@@ -5823,20 +5823,20 @@ button.botui-actions-buttons-button {
     text-decoration-line:none
 }
 .logolink.moe-mashiro .sakurasono {
-    font-size:25px;
+    font-size:px;
     border-radius:9px;
     padding-bottom:2px;
     padding-top:3px;
-    padding-left:4px;
+    padding-left:3px;
     padding-right:2px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 span.sakurasono {}
 .logolink.moe-mashiro .shironeko {
-    font-size:25px;
+    font-size:15px;
     margin-left:-5px;
-    letter-spacing:1.5px;
+    letter-spacing:2.5px;
 }
 .forgetmenot input[type=checkbox] {
     border:1px solid #b4b9be;
@@ -5861,7 +5861,7 @@ span.sakurasono {}
     transition:.05s border-color ease-in-out
 }
 .forgetmenot input[type=checkbox]:checked:before {
-    content:"✔";
+    content:"âœ”";
     margin:-3px 0 0 -4px;
     color:#1e8cbe
 }
@@ -5876,7 +5876,7 @@ span.sakurasono {}
     -moz-osx-font-smoothing:grayscale
 }
 .forgetmenot input[type=checkbox]:checked:before {
-    content:"✔";
+    content:"âœ”";
     margin:-3px 0 0 -4px;
     color:#1e8cbe
 }
@@ -6319,7 +6319,7 @@ span.sakurasono {}
     cursor:pointer
 }
 .changeSkin-gear span:before {
-    content:"切换主题 | Change Skin "
+    content:"åˆ‡æ¢ä¸»é¢˜ | Change Skin "
 }
 @media(max-width:800px) {
     .changeSkin-gear span::before {
@@ -7457,10 +7457,10 @@ to {
     font-family:'Merriweather Sans',Helvetica,Tahoma,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei','WenQuanYi Micro Hei',sans-serif
 }
 .chinese-tranditional-font {
-    font-family:Helvetica,Tahoma,Arial,"文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","微軟正黑體","Microsoft JhengHei","標楷體",DFKai-SB,sans-serif
+    font-family:Helvetica,Tahoma,Arial,"æ–‡æ³‰é©›æ­£é»‘","WenQuanYi Zen Hei","å„·é»‘ Pro","LiHei Pro","å¾®è»Ÿæ­£é»‘é«”","Microsoft JhengHei","æ¨™æ¥·é«”",DFKai-SB,sans-serif
 }
 .japanese-font {
-    font-family:游ゴシック体,'Yu Gothic',YuGothic,'ヒラギノ角ゴシック Pro','Hiragino Kaku Gothic Pro',メイリオ,Meiryo,Osaka,'ＭＳ Ｐゴシック','MS PGothic',sans-serif
+    font-family:æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“,'Yu Gothic',YuGothic,'ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ã‚·ãƒƒã‚¯ Pro','Hiragino Kaku Gothic Pro',ãƒ¡ã‚¤ãƒªã‚ª,Meiryo,Osaka,'ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯','MS PGothic',sans-serif
 }
 .english-serif {
     font-family:'Noto Serif CJK SC','Noto Serif CJK',serif

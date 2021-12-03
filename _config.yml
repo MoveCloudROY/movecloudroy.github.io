@@ -90,6 +90,7 @@ deploy:
 # backup
 backup:
   type: git
+  theme: Sakura
   message: backup my blog
   repository:
     github: https://github.com/MoveCloudROY/movecloudroy.github.io.git,backup

@@ -5826,17 +5826,10 @@ button.botui-actions-buttons-button {
     font-size:25px;
     border-radius:9px;
     padding-bottom:2px;
-    padding-top:3px;
-    padding-left:4px;
-    padding-right:2px;
-    letter-spacing: 1.5px;
+    padding-top:5px
 }
-
-span.sakurasono {}
 .logolink.moe-mashiro .shironeko {
-    font-size:25px;
-    margin-left:-5px;
-    letter-spacing:1.5px;
+    margin-left:-5px
 }
 .forgetmenot input[type=checkbox] {
     border:1px solid #b4b9be;

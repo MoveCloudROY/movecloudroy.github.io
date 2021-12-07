@@ -2113,13 +2113,13 @@ i.iconfont.hotpost {
     color:#ff6d6d
 }
 .entry-content h4:after {
-    content:"â–Œ";
+    content:"\2742";
     left:0;
     position:absolute;
     color:#ff6d6d
 }
 .entry-content h5:after {
-    content:"â™¯";
+    content:"\2732";
     left:0;
     position:absolute;
     color:#ff6d6d

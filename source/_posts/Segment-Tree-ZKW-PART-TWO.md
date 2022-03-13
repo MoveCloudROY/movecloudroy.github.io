@@ -1,7 +1,7 @@
 ---
 title: Segment-Tree-ZKW-PART-TWO
 author: ROY1994
-avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg
+avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/custom/avatar.jpg
 authorLink: roy1994.top
 authorAbout: CODE_LIFE
 authorDesc: CODE_LIFE
@@ -13,7 +13,7 @@ tags:
 	- 线段树
 keywords: 线段树
 description: RT
-photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6/img/articlepic/head/6.webp
+photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/articlepic/head/6.webp
 ---
 > 本来想看看网上的讲解的，结果发现都讲得不清楚，还是自己写一个吧
 
@@ -136,7 +136,7 @@ inline int askpot(int pos)
     while(x) sum+=Tree[x].num,x>>=1;
     return sum;
 }
- ```
+```
  ## 区间查询
  ```cpp
  inline int askRange(int l,int r)

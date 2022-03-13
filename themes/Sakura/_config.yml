@@ -2,17 +2,17 @@
 prefixName: 循迹者 
 siteName: 的日常
 # favicon and site master avatar
-favicon: /images/favicon.ico
+favicon: /images/favicon.svg
 avatar: /img/custom/avatar.jpg
 url: https://roy1994.top
-description: “Hi,ROY1994!”
-cdn: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6.1
+description: “彼管窥者乃循迹而求之，揣其所至于巨细之境”
+cdn: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7
 pjax: 1
 # 1开启
 mathjax: 1
 
 notice: Do Everything!!
-lazyloadImg: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6.1/img/loader/orange.progress-bar-stripe-loader.svg
+lazyloadImg: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/loader/orange.progress-bar-stripe-loader.svg
 
 menus:
   首页: { path: /, fa: fa-fort-awesome faa-shake }
@@ -47,19 +47,19 @@ homePageSortType: -1
 homeArticleShown: 10
 # 背景图片 更好的修改
 bg:
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/1.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/2.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/3.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/4.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/5.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/6webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/7.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/9.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/10.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/11.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/12.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/13.webp
-  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/cover/14.webp
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/2.webp
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/9.webp
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/2.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/6.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/12.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/14.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/28.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/51.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/54.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/58.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/63.jpg
+  - https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/cover/65.jpg
+
 
 # 背景图片样式 空 原图效果 filter-dim 阴影 filter-grid 横条 filter-dot 点点
 bgclass: filter-dot

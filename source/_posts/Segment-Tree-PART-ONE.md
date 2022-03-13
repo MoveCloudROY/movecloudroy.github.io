@@ -1,7 +1,7 @@
 ---
 title: Segment-Tree-PART-ONE
 author: ROY1994
-avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg
+avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/custom/avatar.jpg
 authorLink: roy1994.top
 authorAbout: CODE_LIFE
 authorDesc: CODE_LIFE
@@ -13,7 +13,7 @@ tags:
 	- 线段树
 keywords: 线段树
 description: RT
-photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6/img/articlepic/head/5.webp
+photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/articlepic/head/5.webp
 ---
 
 # 概念

@@ -1,7 +1,7 @@
 ---
 title: bitset讲解
 author: ROY1994
-avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg
+avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/custom/avatar.jpg
 authorLink: roy1994.top
 authorAbout: CODE_LIFE
 authorDesc: CODE_LIFE
@@ -12,7 +12,7 @@ tags:
     - STL
 keywords: bitset
 description: RT
-photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6/img/articlepic/head/3.webp
+photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/articlepic/head/3.webp
 ---
 
 > 为了写一道[毒瘤题](https://www.luogu.org/problemnew/show/P3674)，决定学一下 **bitset**

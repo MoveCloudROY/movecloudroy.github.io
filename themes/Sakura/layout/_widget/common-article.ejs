@@ -112,11 +112,11 @@
       <%- partial('_partial/comment') %>
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="<%- post.authorLink %>" class="profile gravatar"><img src="<%- post.avatar%>" itemprop="image" alt="<%- post.author %>" height="70" width="70"></a>
+          <a href="<%- post.authorLink %>" class="profile gravatar"><img src="<%- (theme.cdn || '') + theme.avatar%>" itemprop="image" alt="<%- post.author %>" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="<%- post.authorLink%>" itemprop="url" rel="author"><%- post.author %></a>
+            <a href="<%- post.authorLink%>" itemprop="url" rel="author"><%- config.author %></a>
             </h3>
           </div>
         </div>

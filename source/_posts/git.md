@@ -1,7 +1,7 @@
 ---
 title: Git
 author: ROY1994
-avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.2/img/custom/avatar.jpg
+avatar: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/custom/avatar.jpg
 authorLink: roy1994.top
 authorAbout: CODE_LIFE
 authorDesc: CODE_LIFE
@@ -12,7 +12,7 @@ tags:
   - git
 keywords: git
 description: git的基础用法
-photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.6/img/articlepic/head/11.webp
+photos: https://cdn.jsdelivr.net/gh/MoveCloudROY/cdn@1.7/img/articlepic/head/11.webp
 ---
 
 ## 使用基本设置
